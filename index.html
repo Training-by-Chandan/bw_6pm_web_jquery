@@ -1,0 +1,154 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+    </head>
+    <body>
+        <div class="container-fluid main">
+            <div class="row">
+                
+                <div class="col-lg-3 col-md-6 col-sm-12 border-col" style="z-index: 100;">
+                    <div class="row">
+                        <div id="one" class="col-lg-3 border-col" style="z-index: 90;">1.1</div>
+                        <div class="col-lg-3 border-col">1.2</div>
+                        <div class="col-lg-3 border-col">1.3</div>
+                        <div class="col-lg-3 border-col">1.4</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12 border-col">2</div>
+                <div class="col-lg-3 col-md-6 col-sm-12 border-col">3</div>
+                <div class="col-lg-3 col-md-6 col-sm-12 border-col">4</div>
+            </div>
+
+            <div class="row" > 
+                <div class="col-lg-12" id="someId">
+                    <button id="btnAdd" class="btn btn-primary">Click Here to Add Item Below</button>
+                    <div class="row">
+                        <div clas="row">
+                                <button id="btnId" class="btn btn-primary">Click Here to Add Item Below</button>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <input type="text"/>
+                    <input type="text" id="nameText"/>
+                    <button id="update" class="btn btn-primary">Update</button>
+                    <span class="alert alert-danger" id="number"></span>
+                </div>
+                <div id="items" class="row">
+
+                </div>
+            </div>
+
+            <table>
+                <thead>
+                     <th>Id</th>   
+                     <th>Name</th>   
+                     <th>Action</th>   
+                </thead>
+                <tbody>
+                     <tr class="tr">
+                         <td class="id">1</td>
+                         <td>Chandan</td>
+                         <td>
+                            <button class="btn btn-primary edit" data-id="1" data-name="Chandan">Edit</button>
+                            <button class="btn btn-info">Details</button>
+                            <button class="btn btn-Danger">Delete</button>
+
+                         </td>
+                     </tr>  
+                     
+                     <tr class="tr">
+                        <td class="id">2</td>
+                        <td>Niroj</td>
+                        <td>
+                            <button class="btn btn-primary edit" data-id="2" data-name="Niroj">Edit</button>
+                            <button class="btn btn-info">Details</button>
+                            <button class="btn btn-Danger">Delete</button>
+
+                        </td>
+                    </tr>   
+
+                    <tr class="tr">
+                        <td class="id">3</td>
+                        <td>Binod</td>
+                        <td>
+                            <button class="btn btn-primary edit" data-id="3" data-name="Binod">Edit</button>
+                            <button class="btn btn-info">Details</button>
+                            <button class="btn btn-Danger">Delete</button>
+
+                        </td>
+                    </tr>   
+
+                    <tr class="tr">
+                        <td class="id">4</td>
+                        <td>Pallabi</td>
+                        <td>
+                            <button class="btn btn-primary edit" data-id="4" data-name="Pallabi">Edit</button>
+                            <button class="btn btn-info">Details</button>
+                            <button class="btn btn-Danger">Delete</button>
+
+                        </td>
+                    </tr>   
+
+                    <tr class="tr">
+                        <td class="id">5</td>
+                        <td>Ashish</td>
+                        <td>
+                            <button class="btn btn-primary edit" data-id="5" data-name="Ashish">Edit</button>
+                            <button class="btn btn-info">Details</button>
+                            <button class="btn btn-Danger">Delete</button>
+
+                        </td>
+                    </tr>   
+                </tbody>
+            </table>
+
+        </div>
+        <div class="row">
+            <span id="alert" class="alert alert-info">This is some alert</span>
+        </div>
+
+
+
+    </body>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            //alert("All loaded");
+            $("#btnAdd").on('click',function(){
+                
+                var str='<div class="col-lg-3">item added</div>';
+                $("#items").append(str);
+
+            });
+            
+            $("#update").on('click',function(){
+                $("#alert").html($(this).siblings("#nameText")[0].value);
+
+            });
+
+            $("#nameText").on('keyup',function(){
+                $("#number").html($(this).val());
+
+            });
+
+            $(".edit").on('click', function(){
+                var parent=$(this).parents(".tr")[0];
+                var childId=$(parent).children(".id")[0];
+                var child=$(childId);
+                console.log(child.html());
+
+                var data=$($($(this).parents(".tr")[0]).children(".id")[0]).html()
+               // var data=$(this).parents(".tr").children(".id")[0].html();
+             alert("Editing data for id "+ child.html());
+
+             
+            });
+        })
+    </script>
+    
+    
+</html>
