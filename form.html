@@ -1,0 +1,77 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/jquery-ui.css">
+    </head>
+    <body class="container-fluid">
+        <div class="row">
+         
+                <form class="row g-3">
+                   
+                    <div class="col-auto">
+                      <label for="search"></label>
+                      <input type="text" class="form-control" id="search" placeholder="Search">
+                    </div>
+                    <div class="col-auto">
+                      <button type="button" class="btn btn-outline-info mb-3">Search</button>
+                    </div>
+                  </form>
+         
+        </div>
+        <form id="simple">
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Email address</label>
+                <input name="email" type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+              </div>
+              <div class="mb-3">
+                <label for="exampleFormControlInput2" class="form-label">Password</label>
+                <input name="password" type="password" class="form-control" id="exampleFormControlInput2" placeholder="Password">
+              </div>
+              <div class="mb-3">
+                <label for="customRange1" class="form-label">Example range</label>
+                <input name="age" type="range" class="form-range" id="customRange1">
+              </div>
+              <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+                <textarea name="description" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+              </div>
+              <div class="mb-3">
+                
+                  <button type="button" class="btn btn-primary" id="btnSubmit">Submit</button>   
+                  <input type="reset" value="Reset" />
+                </div>
+            </form>
+
+            <div class="row" id="sortable">
+                <div class="col-lg-3 red">
+                    <button>test</button>
+                </div>
+                <div class="col-lg-3 green">
+                    <button>test</button>
+
+                </div>
+                <div class="col-lg-3 yellow">
+                    <button>test</button>
+
+                </div>
+                <div class="col-lg-3 blue">
+                    <button>test</button>
+
+                </div>
+              
+
+            </div>
+    </body> 
+        <script src="js/jquery-3.6.0.min.js"></script>
+        <script src="js/jquery-ui.min.js"></script>
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $("#btnSubmit").on('click', function(){
+                    console.log($("#simple").serialize());
+                });
+                $( "#sortable" ).sortable();
+            });
+        </script>
+</html> 

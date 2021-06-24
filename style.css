@@ -13,3 +13,20 @@ body{
     border-color: black;
     border-style: solid;
 }
+
+.red{
+    background-color: #ff2d2d;
+    height: 100px    ;
+}
+.green{
+    background-color: #58fb2f;
+    height: 100px    ;
+}
+.blue{
+    background-color: #3c12f8;
+    height: 100px   ;
+}
+.yellow{
+    background-color: #fbff08;
+    height: 100px   ;
+}
